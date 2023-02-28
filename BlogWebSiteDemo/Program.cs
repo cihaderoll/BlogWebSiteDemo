@@ -3,15 +3,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddDbContext<BlogContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("local"));
-//});
+builder.Services.AddDbContext<BlogContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("local"));
+});
+
+var conf = builder.Configuration.GetConnectionString("local");
+
 
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 
 var app = builder.Build();
 
