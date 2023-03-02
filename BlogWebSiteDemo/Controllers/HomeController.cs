@@ -1,7 +1,9 @@
 ﻿using Blog.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Blog.Core.Services.Concrete;
 using Microsoft.AspNetCore.Authorization;
+using Blog.Core.Services.Abstract;
 
 namespace Blog.Web.Controllers
 {
