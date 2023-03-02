@@ -21,8 +21,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromHours(1);
-    options.LoginPath = "/Identity/Auth";
-    options.LogoutPath = "/Identity/LogOff";
+    options.LoginPath = "/Account/Login";
+    options.LogoutPath = "/Account/Login";
     options.SlidingExpiration = true;
 });
 
