@@ -15,7 +15,7 @@ builder.Services.AddDbContext<BlogContext>(options =>
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(
     options =>
     {
-        options.SignIn.RequireConfirmedAccount = true;
+        options.SignIn.RequireConfirmedAccount = false;
     }
 ).AddEntityFrameworkStores<BlogContext>();
 

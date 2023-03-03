@@ -15,14 +15,13 @@ namespace Blog.Web.Controllers
 
         public IActionResult Login()
         {
-
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(LoginDto data)
+        public async Task<IActionResult> Login([FromBody] LoginDto data)
         {
-            var result = _accountService.Login();
+            await _accountService.Login(data);
 
             return Json("Account/Login");
         }
