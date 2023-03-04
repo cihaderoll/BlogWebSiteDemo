@@ -21,7 +21,7 @@ namespace Blog.Core.Services.Concrete
             if (user == null)
                 return;
 
-            await _signInManager.SignInAsync(user, false);
+            var result = await _signInManager.PasswordSignInAsync(dto.UserName, dto.Password, false, false);
 
             return;
         }
