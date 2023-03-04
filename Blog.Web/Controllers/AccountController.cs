@@ -23,7 +23,7 @@ namespace Blog.Web.Controllers
         {
             await _accountService.Login(data);
 
-            return Json("Account/Login");
+            return Json(new {Url= "asdadasd"});
         }
     }
 }

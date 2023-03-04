@@ -22,10 +22,16 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;  
     options.ExpireTimeSpan = TimeSpan.FromHours(1);
     options.LoginPath = "/Account/Login";
     options.LogoutPath = "/Account/Login";
     options.SlidingExpiration = true;
+});
+
+builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
+{
+    options.Cookie.Name = "MyCookieAuth";
 });
 
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();

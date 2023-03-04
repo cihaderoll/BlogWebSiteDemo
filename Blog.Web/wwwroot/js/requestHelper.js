@@ -12,7 +12,7 @@
             url: url,
             type: 'POST',
             dataType: "json",
-            contentType: "application/json",
+            contentType: "text/json",
             data: JSON.stringify(data),
             success: function (data, status, xhr) {
                 debugger;
