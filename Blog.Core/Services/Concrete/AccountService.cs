@@ -1,6 +1,7 @@
 ﻿using Blog.Common.Dtos.Account;
 using Blog.Core.Services.Abstract;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace Blog.Core.Services.Concrete
 {
@@ -27,7 +28,9 @@ namespace Blog.Core.Services.Concrete
 
                 if (result.Succeeded)
                 {
+                    var claims = await _userManager.GetClaimsAsync(user);
 
+                    await _userManager.AddClaimAsync(user, new Claim("UserName", user.UserName));
                 }
 
             }
